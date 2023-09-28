@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile</title>
+  <link rel="stylesheet" type="text/css" href="/profile.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        <a href="/"><img src="/images/logo.png" alt="PagePals Logo" class="logo-img"></a>
+        <a href="/" class="brand-text">PagePals</a>
+      </div>
+      <ul class="navbar-links">
+        <li><a href="/profile">Profile</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/bookshelf">Bookshelf</a></li>
+        <li><a href="/posts">Posts</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<br><br><br>
+<div class="profile-section">
+  <h1>Welcome to your profile</h1>
+  {{#if error}}
+    <p>{{error}}</p>
+  {{else}}
+    {{#if user.profile_picture}}
+      <div class="profile-picture">
+        <img src="/uploads/{{user.profile_picture}}" alt="Profile Picture" class="profile-image">
+      </div>
+    {{/if}}
+
+    <h2>{{user.username}}</h2>
+    <p>Email: {{user.email}}</p>
+    <p>Country: {{user.country}}</p>
+    {{#if flagUrl}}
+      <div class="flag-container">
+        <img src="{{flagUrl}}" alt="Country Flag" class="flag-image">
+      </div>
+    {{/if}}
+
+    <form action="/profile" method="POST">
+      <input type="text" name="username" value="{{user.username}}" placeholder="Username" required>
+      <input type="email" name="email" value="{{user.email}}" placeholder="Email" required>
+      <input type="text" name="country" value="{{user.country}}" placeholder="Country" required>
+      <input type="file" name="profilePicture" accept="image/*">
+      <button type="submit">Update Profile</button>
+    </form>
+
+  {{/if}}
+</div>
+
+</body>
+</html>

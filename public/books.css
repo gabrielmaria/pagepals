@@ -1,0 +1,121 @@
+/* books.css */
+body {
+  background-image: url("images/bc_3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header-section {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+}
+
+.header-title {
+  text-align: center;
+  color: #333;
+  font-size: 32px;
+  margin: 0;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.search-form input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  font-size: 16px;
+}
+
+.search-form button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.books-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px); /* Subtract header height from viewport height */
+}
+
+.books-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+}
+
+.book-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  max-width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-card h2 {
+  margin-top: 0;
+}
+
+.book-card p {
+  margin-bottom: 10px;
+}
+
+.book-card img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.error-message {
+  color: white;
+  background-color: #ff6347;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.error-message::before {
+  content: "Error: ";
+  font-weight: bold;
+}
+
+.favorite-button,
+.wishlist-button {
+  margin: .5%;
+  padding: 7px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.favorite-button:hover,
+.wishlist-button:hover {
+  background-color: #555;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "projfinal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "fetch": "^1.1.0",
+    "hbs": "^4.2.0",
+    "jsonwebtoken": "^9.0.0",
+    "luxon": "^3.3.0",
+    "multer": "^1.4.5-lts.1",
+    "mysql": "^2.18.1",
+    "node-fetch": "^3.3.1",
+    "nodemon": "^2.0.22",
+    "pdfkit": "^0.13.0",
+    "sequelize": "^6.32.0"
+  }
+}

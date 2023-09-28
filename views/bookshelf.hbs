@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bookshelf</title>
+  <link rel="stylesheet" href="/bookshelf.css">
+</head>
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <img class="logo-img" src="/images/logo.png" alt="Logo">
+        <a class="brand-text" href="/">PagePals</a>
+      </div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/books">Books</a></li>
+          <li><a class="active" href="/bookshelf">Bookshelf</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="section">
+      <h2>Reading</h2>
+      <div class="card-list">
+        {{#if reading}}
+          {{#each reading}}
+            <div class="card">
+              <div class="left-section">
+                <div class="cover">
+                  <img src="{{thumbnail}}" alt="Book cover">
+                </div>
+                <div class="details">
+                  <h3>{{title}}</h3>
+                  <p>{{author}}</p>
+                </div>
+                <div class="note-section">
+                  <div class="notes-existing">
+                    {{#if notes}}
+                      {{#each notes}}
+                        <div class="note">
+                          <p>{{this}}</p>
+                        </div>
+                      {{/each}}
+                    {{/if}}
+                  </div>
+                  <div class="notes-add">
+                    <form action="/bookshelf/update-notes/{{id}}" method="POST">
+                      <input type="text" name="notes" class="note-input" placeholder="Add notes">
+                      <button type="submit" class="note-add-button">Add Notes</button>
+                    </form>
+                  </div>
+                </div>
+                <div class="buttons">
+                  <form action="/bookshelf/reading/remove/{{id}}" method="POST">
+                    <button type="submit" class="remove-btn">Remove from Reading</button>
+                  </form>
+                  <form action="/bookshelf/reading/move-to-favorites/{{id}}" method="POST">
+                    <button type="submit" class="move-btn">Move to Read</button>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <p>No books in Reading.</p>
+        {{/if}}
+      </div>
+    </div>
+
+
+    <div class="section">
+      <h2>Read</h2>
+      <div class="card-list">
+        {{#if favorites}}
+          {{#each favorites}}
+            <div class="card">
+              <div class="left-section">
+                <div class="cover">
+                  <img src="{{thumbnail}}" alt="Book cover">
+                </div>
+                <div class="details">
+                  <h3>{{title}}</h3>
+                  <p>{{author}}</p>
+                </div>
+                <div class="buttons">
+                  <form action="/bookshelf/favorites/remove/{{id}}" method="POST">
+                    <button type="submit" class="remove-btn">Remove from Read</button>
+                  </form>
+                  <form action="/bookshelf/favorites/move-to-wishlist/{{id}}" method="POST">
+                    <button type="submit" class="move-btn">Move to Wishlist</button>
+                  </form>
+                  <form action="/bookshelf/favorites/move-to-reading/{{id}}" method="POST">
+                    <button type="submit" class="move-btn">Move to Reading</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <p>No books in Read.</p>
+        {{/if}}
+      </div>
+    </div>
+
+
+    <div class="section">
+      <h2>Wishlist</h2>
+      <div class="card-list">
+        {{#if wishlist}}
+          {{#each wishlist}}
+            <div class="card">
+              <div class="left-section">
+                <div class="cover">
+                  <img src="{{thumbnail}}" alt="Book cover">
+                </div>
+                <div class="details">
+                  <h3>{{title}}</h3>
+                  <p>{{author}}</p>
+                </div>
+                <div class="buttons">
+                  <form action="/bookshelf/wishlist/remove/{{id}}" method="POST">
+                    <button type="submit" class="remove-btn">Remove from Wishlist</button>
+                  </form>
+                  <form action="/bookshelf/wishlist/move-to-favorites/{{id}}" method="POST">
+                    <button type="submit" class="move-btn">Move to Read</button>
+                  </form>
+                  <form action="/bookshelf/wishlist/move-to-reading/{{id}}" method="POST">
+                    <button type="submit" class="move-btn">Move to Reading</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        {{else}}
+          <p>No books in Wishlist.</p>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</body>
+</html>

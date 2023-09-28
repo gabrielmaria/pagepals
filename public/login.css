@@ -1,0 +1,212 @@
+body {
+  font-family: 'Arial';
+  margin: 0;
+  padding: 0;
+  background-image: url('images/bc_login.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 24px;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 0;
+  height: 20px;
+}
+
+.logo-text {
+  color: #fff;
+  font-size: 16px;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links li {
+  margin-right: 5px;
+}
+
+.navbar-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.brand-text {
+  color: #fff;
+  font-size: 20px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.card {
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  background-color: #f9f9f9;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  border-top-right-radius: 6px;
+  border-top-left-radius: 6px;
+}
+
+.welcome-message {
+  text-align: center; /* Center-align the welcome message */
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group-icon {
+  margin-right: 10px;
+}
+
+.form-control {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  padding: 10px;
+  width: 95%;
+  background-color: transparent;
+}
+
+.flag-img {
+  width: 30px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 50px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #555;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-link {
+  background-color: transparent;
+  color: #007bff;
+}
+
+.btn-link:hover {
+  background-color: transparent;
+  color: #0056b3;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-danger {
+  color: #dc3545;
+}
+
+.text-success {
+  color: #28a745;
+}

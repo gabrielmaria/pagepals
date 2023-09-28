@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/register.css">
+    <title>PagePals - Register</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="navbar-brand">
+                    <img src="/images/logo.png" alt="PagePals Logo" class="logo-img">
+                    <span class="brand-text">PagePals</span>
+                </div>
+                <ul class="navbar-links">
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h2 class="card-header">Sign Up</h2>
+            <div class="card-body">
+                {{#if message}}
+                    <div class="alert {{#if success}}alert-success{{else}}alert-danger{{/if}}" role="alert">
+                        {{message}}
+                    </div>
+                {{/if}}
+
+                <form action="/auth/register" method="POST">
+                    <div class="form-group">
+                        <label for="username" class="form-label">Username</label>
+                        <div class="input-group">
+                            <span class="input-group-icon">
+                                <i class="bi bi-person-fill"></i>
+                            </span>
+                            <input type="text" class="form-control" id="username" name="username"
+                                placeholder="Enter your username" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <div class="input-group">
+                            <span class="input-group-icon">
+                                <i class="bi bi-envelope-fill"></i>
+                            </span>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-icon">
+                                <i class="bi bi-shield-lock-fill"></i>
+                            </span>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Enter your password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordConfirm" class="form-label">Confirm Password</label>
+                        <div class="input-group">
+                            <span class="input-group-icon">
+                                <i class="bi bi-shield-lock-fill"></i>
+                            </span>
+                            <input type="password" class="form-control" id="passwordConfirm" name="passwordConfirm"
+                                placeholder="Confirm your password" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="country" class="form-label">Country</label>
+                        <div class="input-group">
+                            <span class="input-group-icon">
+                                <i id="flag-icon" class="bi bi-flag-fill"></i>
+                                <img id="flag-img" src="" alt="Country flag" class="flag-img">
+                            </span>
+                            <select class="form-control" id="country" name="country" required>
+                                <option selected disabled>Select a country</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#flag-img").hide();
+
+            $("#country").change(function () {
+                var selectedCountry = $(this).val();
+                var selectedFlag = $(this).find(":selected").data("flag");
+
+                if (selectedCountry) {
+                    $("#flag-icon").hide();
+                    $("#flag-img").attr("src", selectedFlag).show();
+                } else {
+                    $("#flag-icon").show();
+                    $("#flag-img").hide();
+                }
+            });
+
+            function fetchCountryData() {
+                return fetch("https://restcountries.com/v2/all")
+                    .then(function (response) {
+                        return response.json();
+                    })
+                    .then(function (data) {
+                        return data.map(function (country) {
+                            return {
+                                name: country.name,
+                                flag: country.flags.svg,
+                            };
+                        });
+                    })
+                    .catch(function (error) {
+                        console.log("Error fetching country data:", error);
+                        return [];
+                    });
+            }
+
+            fetchCountryData().then(function (countries) {
+                var options = "";
+                countries.forEach(function (country) {
+                    options += `<option value="${country.name}" data-flag="${country.flag}">${country.name}</option>`;
+                });
+                $("#country").html(options);
+            });
+        });
+    </script>
+</body>
+
+</html>

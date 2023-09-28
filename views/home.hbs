@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>PagePals - Home</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const searchInput = document.getElementById('searchInput');
+      const searchButton = document.getElementById('searchButton');
+
+      searchButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        const searchTerm = searchInput.value;
+        const searchURL = `/books/search?query=${encodeURIComponent(searchTerm)}`;
+        window.location.href = searchURL;
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="navbar-container">
+      <div class="navbar-brand">
+        <img class="logo-img" src="/images/logo.png" alt="Logo">
+        <a class="brand-text" href="/">PagePals</a>
+      </div>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="/profile">Profile</a></li>
+          <li><a href="/books">Books</a></li>
+          <li><a href="/bookshelf">Bookshelf</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <section class="welcome-section">
+    <div class="welcome-background"></div>
+    <div class="container welcome-content">
+      <div class="welcome-text">
+        <h1>Welcome to PagePals!</h1>
+        <p>Discover your next great read.</p>
+        <form>
+          <input type="text" id="searchInput" placeholder="Search books...">
+          <button type="submit" id="searchButton">Search</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Best Books of June</h2>
+    <div class="book-container">
+      <div class="book">
+        <div class="title">
+          <p>Love, Theoretically</p>
+        </div>
+        <div class="book-cover cover1">
+          <div class="effect"></div>
+          <div class="light"></div>
+        </div>
+        <div class="book-inside"></div>
+      </div>
+
+      <div class="book">
+        <div class="title">
+          <p>The Seven Year Slip</p>
+        </div>
+        <div class="book-cover cover2">
+          <div class="effect"></div>
+          <div class="light"></div>
+        </div>
+        <div class="book-inside"></div>
+      </div>
+
+      <div class="book">
+        <div class="title">
+          <p>Girlfriend on Mars: A Novel</p>
+        </div>
+        <div class="book-cover cover3">
+          <div class="effect"></div>
+          <div class="light"></div>
+        </div>
+        <div class="book-inside"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Best Books of 2023</h2>
+    <div class="book-container">
+      <div class="book">
+        <div class="title">
+          <p>Happy Place</p>
+        </div>
+        <div class="book-cover cover4">
+          <div class="effect"></div>
+          <div class="light"></div>
+        </div>
+        <div class="book-inside"></div>
+      </div>
+
+      <div class="book">
+        <div class="title">
+          <p>Things We Hide from the Light</p>
+        </div>
+        <div class="book-cover cover5">
+          <div class="effect"></div>
+          <div class="light"></div>
+        </div>
+        <div class="book-inside"></div>
+      </div>
+
+      <div class="book">
+        <div class="title">
+          <p>All the Dangerous Things</p>
+        </div>
+        <div class="book-cover cover6">
+          <div class="effect"></div>
+          <div class="light"></div>
+        </div>
+        <div class="book-inside"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2>About PagePals</h2>
+    <p>PagePals is a leading online platform for book lovers. We provide a wide range of books in various genres, connecting readers with their favorite authors and titles. Our mission is to foster a vibrant reading community and promote the love for literature.</p>
+  </section>
+
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <div class="contact-info">
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.530980792447!2d-0.12623668422934307!3d51.50015224126242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b86c3d4fb7%3A0xb3f312373f6f6a9f!2sBuckingham%20Palace!5e0!3m2!1sen!2suk!4v1565877759399!5m2!1sen!2suk" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+      <div class="contact-details">
+        <h3>Contact Information</h3>
+        <p>Email: info@pagepals.com</p>
+        <p>Phone: +1 123-456-7890</p>
+        <p>Address: 123 Main Street, City, Country</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 PagePals. All rights reserved.</p>
+  </footer>
+</body>
+
+</html>
