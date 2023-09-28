@@ -1,6 +1,6 @@
 # PagePals
 # Overview
- PagePals is a project developed as part of the Web Programming course at the university. It is a web application that allows users to efficiently manage their reading materials by keeping track of the books they have already read, the ones they are currently reading, and those they wish to read in the future.
+PagePals is a project developed as the final project for the Web Programming class at the university. It is a web application that allows users to efficiently manage their reading materials by keeping track of the books they have already read, the ones they are currently reading, and those they wish to read in the future.
 
  # Key Features
 Book Management: Users can add detailed information about books, including title, author, genre, reading date, and a custom cover image.
